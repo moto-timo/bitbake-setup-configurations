@@ -48,6 +48,12 @@
     },
     "bitbake-setup": {
         "configuration": {
+            "genericarm64-poky": {
+                "description": "Poky reference distro build for qemuarm64",
+                "bb-layers": ["openembedded-core/meta","meta-yocto/meta-yocto-bsp","meta-yocto/meta-poky"],
+                "oe-fragments": ["machine/genericarm64","distro/poky","core/yocto/sstate-mirror-cdn"],
+                "targets": ["bitbake core-image-minimal core-image-full-cmdline core-image-sato-sdk core-image-weston"]
+            },
             "qemux86-64-poky": {
                 "description": "Poky reference distro build for qemux86-64",
                 "bb-layers": ["openembedded-core/meta","meta-yocto/meta-yocto-bsp","meta-yocto/meta-poky"],
